@@ -2,7 +2,7 @@
 <head>
     <title>Lista de Atividades</title>
     <meta charset="utf-8">
-    <link href="<?php echo URL_BASE . "assets/css/bootstrap.css"; ?>" rel="stylesheet" />
+    <link href="<?php echo URL_BASE . "assets/bootstrap/bootstrap.css"; ?>" rel="stylesheet" />
     <link href="<?php echo URL_BASE . "assets/css/site.css"; ?>" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>

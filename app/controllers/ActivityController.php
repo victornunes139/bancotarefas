@@ -7,7 +7,6 @@ class ActivityController extends Controller {
 
 	public function index() {
 		$activityModel = new ActivityModel();
-
 		$data["activity"] = $activityModel->list();
 		$data['view'] = "CRUD/Index";
 		$this->load("template", $data);

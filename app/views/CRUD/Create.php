@@ -1,12 +1,9 @@
-<?php if (isset($erro) > 0) {
-	?>
+<?php if (isset($erro) > 0) { ?>
   <div class="alert alert-danger">
 	   <?php foreach ($erro as $erro) {
-		echo $erro . "<br>";
-	}?>
+		echo $erro . "<br>"; }?>
   </div>
 <?php }?>
-
 
 <div class="box box-primary">
   <h1>Cadastrar Atividade</h1>
@@ -19,15 +16,13 @@
       <div>
         <label>Nome</label>
         <input name="name" class="form-control" value="<?php if (!empty($values)) {
-	echo $values[0];
-}?>">
+		echo $values[0];}?>">
       </div>
 
       <div>
         <label>Descricao</label>
         <input name="description" class="form-control" value="<?php if (!empty($values)) {
-	echo $values[1];
-}?>">
+		echo $values[1];}?>">
       </div>
 
       <div>
