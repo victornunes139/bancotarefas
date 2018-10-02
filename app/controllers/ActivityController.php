@@ -36,10 +36,11 @@ class ActivityController extends Controller {
 	}
 
 	public function editForm($id) {
+		$var = null;
 		$activity = new ActivityModel();
 		$data["activity"] = $activity->getActivityModel($id);
-		$data["priority"] = $activity->getPriority();
-		$data["status"] = $activity->getStatus();
+		$data["priority"] = $activity->getPriority($var);
+		$data["status"] = $activity->getStatus($var);
 		$data['view'] = "CRUD/Edit";
 		$this->load("template", $data);
 	}
@@ -49,6 +50,15 @@ class ActivityController extends Controller {
 		$activity->deleteProcess($id);
 		header("location:" . URL_BASE . "Activity");
 		exit;
+	}
+
+	public function details($id) {
+		$activity = new ActivityModel();
+		$data["activity"] = $activity->getActivityModel($id);
+		$data["priority"] = $activity->getPriority($data["activity"]->priority_id);
+		$data["status"] = $activity->getStatus($data["activity"]->status_id);
+		$data['view'] = "CRUD/Details";
+		$this->load("template", $data);
 	}
 
 }

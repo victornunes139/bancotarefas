@@ -51,16 +51,42 @@ INNER JOIN
 
 	}
 
-	public function getPriority() {
-		$sql = "SELECT * FROM priorities";
-		$query = $this->db->query($sql);
-		return $query->fetchAll(\PDO::FETCH_OBJ);
+	public function getPriority($priority_id) {
+		if ($priority_id) {
+			$result = array();
+			$sql = "SELECT * FROM priorities WHERE id = :priority_id";
+			$query = $this->db->prepare($sql);
+			$query->bindValue(':priority_id', $priority_id);
+			$query->execute();
+
+			if ($query->rowCount() > 0) {
+				$result = $query->fetch(\PDO::FETCH_OBJ);
+			}
+			return $result;
+		} else {
+			$sql = "SELECT * FROM priorities";
+			$query = $this->db->query($sql);
+			return $query->fetchAll(\PDO::FETCH_OBJ);
+		}
 	}
 
-	public function getStatus() {
-		$sql = "SELECT * FROM statuss";
-		$query = $this->db->query($sql);
-		return $query->fetchAll(\PDO::FETCH_OBJ);
+	public function getStatus($status_id) {
+		if ($status_id) {
+			$result = array();
+			$sql = "SELECT * FROM statuss WHERE id = :status_id";
+			$query = $this->db->prepare($sql);
+			$query->bindValue(':status_id', $status_id);
+			$query->execute();
+
+			if ($query->rowCount() > 0) {
+				$result = $query->fetch(\PDO::FETCH_OBJ);
+			}
+			return $result;
+		} else {
+			$sql = "SELECT * FROM statuss";
+			$query = $this->db->query($sql);
+			return $query->fetchAll(\PDO::FETCH_OBJ);
+		}
 	}
 
 	public function edit($id, $name, $description, $dateatime, $priority_id, $status_id) {
