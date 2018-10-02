@@ -34,7 +34,7 @@ class ActivityController extends Controller {
 			$this->load("template", $data);
 		} else {
 			$activityModel->insert($name, $description, $dateatime, $priority_id, $status_id);
-			header("location:" . URL_BASE . "Activity" . "?msg=success");
+			header("location:" . URL_BASE . "Activity" . "?msgAdd=success");
 		}
 	}
 
@@ -57,13 +57,13 @@ class ActivityController extends Controller {
 		$priority_id = $_POST['priority_id'];
 		$status_id = $_POST['status_id'];
 		$activityModel->edit($id, $name, $description, $dateatime, $priority_id, $status_id);
-		header("location:" . URL_BASE . "Activity");
+		header("location:" . URL_BASE . "Activity" . "?msgEdit=success");
 	}
 
 	public function deleteAction($id) {
 		$activity = new ActivityModel();
 		$activity->deleteProcess($id);
-		header("location:" . URL_BASE . "Activity");
+		header("location:" . URL_BASE . "Activity" . "?msgDelete=success");
 		exit;
 	}
 

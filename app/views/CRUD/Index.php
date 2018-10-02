@@ -1,7 +1,22 @@
-<?php if (!empty($_GET['msg'])) {
+<?php if (!empty($_GET['msgAdd'])) {
 	?>
   <div class="alert alert-success">
        Tarefa cadastrada com sucesso!
+  </div>
+<?php }?>
+
+<?php if (!empty($_GET['msgEdit'])) {
+	?>
+  <div class="alert alert-success">
+       Edição realizada com sucesso!
+  </div>
+<?php }?>
+
+
+<?php if (!empty($_GET['msgDelete'])) {
+	?>
+  <div class="alert alert-success">
+       Excluido com sucesso!
   </div>
 <?php }?>
 
