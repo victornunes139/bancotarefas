@@ -25,7 +25,7 @@ echo "Data: " . implode("/", array_reverse(explode("-", $dataseparada))) . "<br>
                             <td><?php echo $activity->status_name; ?></td>
                             <td><a href="<?php echo URL_BASE . "Activity/details/" . $activity->activity_id; ?>" class=" btn btn-info">Visualizar</a></td>
                             <td><a href="<?php echo URL_BASE . "Activity/editForm/" . $activity->activity_id; ?>" class="btn btn-success">Editar</a></td>
-                            <td><a href="<?php echo URL_BASE . "Activity/delete/" . $activity->activity_id; ?>" " class="btn btn-danger">Excluir</a></td>
+                            <td><a href="<?php echo URL_BASE . "Activity/deleteAction/" . $activity->activity_id; ?>" " class="btn btn-danger">Excluir</a></td>
                         </tr>
 
                     <?php endforeach;?>

@@ -75,4 +75,11 @@ INNER JOIN
 		$query->execute();
 	}
 
+	public function deleteProcess($id) {
+		$sql = "DELETE FROM activities WHERE id = :id";
+		$query = $this->db->prepare($sql);
+		$query->bindValue(':id', $id);
+		$query->execute();
+	}
+
 }

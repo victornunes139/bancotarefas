@@ -44,4 +44,11 @@ class ActivityController extends Controller {
 		$this->load("template", $data);
 	}
 
+	public function deleteAction($id) {
+		$activity = new ActivityModel();
+		$activity->deleteProcess($id);
+		header("location:" . URL_BASE . "Activity");
+		exit;
+	}
+
 }
