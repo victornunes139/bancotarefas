@@ -27,9 +27,14 @@ class ActivityController extends Controller {
 		$status_id = $_POST['status_id'];
 		$erro = $activityModel->validation($name, $description, $dateatime, $priority_id, $status_id);
 		if (count($erro) > 0) {
+			$array_values = array($name, $description);
+			$data['values'] = $array_values;
 			$data['view'] = "CRUD/Create";
 			$data['erro'] = $erro;
 			$this->load("template", $data);
+		} else {
+			$activityModel->insert($name, $description, $dateatime, $priority_id, $status_id);
+			header("location:" . URL_BASE . "Activity" . "?msg=success");
 		}
 	}
 

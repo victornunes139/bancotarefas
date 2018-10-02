@@ -1,3 +1,10 @@
+<?php if (!empty($_GET['msg'])) {
+	?>
+  <div class="alert alert-success">
+       Tarefa cadastrada com sucesso!
+  </div>
+<?php }?>
+
 <div class="row">
     <h1>Atividades</h1>
     <div class="col-md-12">

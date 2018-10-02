@@ -14,16 +14,20 @@
     <form action="<?php echo URL_BASE . "Activity/add"; ?>" method="post">
 
       <input type="hidden"
-         name="_token" value="{{ csrf_token() }}" />
+         name="_token" value="{{ csrf_token() }}"  />
 
       <div>
         <label>Nome</label>
-        <input name="name" class="form-control">
+        <input name="name" class="form-control" value="<?php if (!empty($values)) {
+	echo $values[0];
+}?>">
       </div>
 
       <div>
         <label>Descricao</label>
-        <input name="description" class="form-control">
+        <input name="description" class="form-control" value="<?php if (!empty($values)) {
+	echo $values[1];
+}?>">
       </div>
 
       <div>

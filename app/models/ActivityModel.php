@@ -31,6 +31,9 @@ INNER JOIN
 		if (empty($description)) {
 			$error[1] = "O campo de descrição é obrigatório";
 		}
+		if (empty($dateatime)) {
+			$error[2] = "O campo de data é obrigatório";
+		}
 		return $error;
 
 	}
