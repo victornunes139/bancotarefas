@@ -20,19 +20,17 @@ class ActivityController extends Controller {
 
 	public function add() {
 		$activityModel = new ActivityModel();
-		$id = $_POST['id'];
 		$name = $_POST['name'];
 		$description = $_POST['description'];
 		$dateatime = $_POST['dateatime'];
 		$priority_id = $_POST['priority_id'];
 		$status_id = $_POST['status_id'];
-
-		if ($id) {
-			$activityModel->edit($id, $name, $description, $dateatime, $priority_id, $status_id);
-		} else {
-			$activityModel->insert($name, $description, $dateatime, $priority_id, $status_id);
+		$erro = $activityModel->validation($name, $description, $dateatime, $priority_id, $status_id);
+		if (count($erro) > 0) {
+			$data['view'] = "CRUD/Create";
+			$data['erro'] = $erro;
+			$this->load("template", $data);
 		}
-		header("location:" . URL_BASE . "Activity");
 	}
 
 	public function editForm($id) {
@@ -43,6 +41,18 @@ class ActivityController extends Controller {
 		$data["status"] = $activity->getStatus($var);
 		$data['view'] = "CRUD/Edit";
 		$this->load("template", $data);
+	}
+
+	public function edit() {
+		$activityModel = new ActivityModel();
+		$id = $_POST['id'];
+		$name = $_POST['name'];
+		$description = $_POST['description'];
+		$dateatime = $_POST['dateatime'];
+		$priority_id = $_POST['priority_id'];
+		$status_id = $_POST['status_id'];
+		$activityModel->edit($id, $name, $description, $dateatime, $priority_id, $status_id);
+		header("location:" . URL_BASE . "Activity");
 	}
 
 	public function deleteAction($id) {

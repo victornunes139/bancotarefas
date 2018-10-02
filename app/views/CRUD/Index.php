@@ -15,7 +15,7 @@
                     <?php foreach ($activity as $activity): ?>
                         <tr>
                             <td><?php echo $activity->activity_name; ?></td>
-                             <td><?php echo $activity->description; ?></td>
+                            <td><?php echo $activity->description; ?></td>
                             <td><?php $data = explode(" ", $activity->dateatime);
 $dataseparada = $data[0];
 $dataseparada2 = $data[1];

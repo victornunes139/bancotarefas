@@ -6,4 +6,5 @@ class Controller {
 		extract($viewData);
 		include "app/views/" . $viewName . ".php";
 	}
+
 }

@@ -23,6 +23,18 @@ INNER JOIN
 		return $query->fetchAll(\PDO::FETCH_OBJ);
 	}
 
+	public function validation($name, $description, $dateatime, $priority_id, $status_id) {
+		$error = array();
+		if (empty($name)) {
+			$error[0] = "O campo de nome é obrigatório";
+		}
+		if (empty($description)) {
+			$error[1] = "O campo de descrição é obrigatório";
+		}
+		return $error;
+
+	}
+
 	public function insert($name, $description, $dateatime, $priority_id, $status_id) {
 		$sql = "INSERT INTO activities SET name= :name, description= :description, dateatime= :dateatime, priority_id=:priority_id, status_id= :status_id";
 		$query = $this->db->prepare($sql);

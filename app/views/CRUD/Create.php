@@ -1,3 +1,13 @@
+<?php if (isset($erro) > 0) {
+	?>
+  <div class="alert alert-danger">
+	   <?php foreach ($erro as $erro) {
+		echo $erro . "<br>";
+	}?>
+  </div>
+<?php }?>
+
+
 <div class="box box-primary">
   <h1>Cadastrar Atividade</h1>
   <div class="box-header with-border">

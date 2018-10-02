@@ -1,7 +1,7 @@
 <div class="box box-primary">
   <h1>Editar Atividade</h1>
   <div class="box-header with-border">
-    <form action="<?php echo URL_BASE . "Activity/add"; ?>" method="post">
+    <form action="<?php echo URL_BASE . "Activity/edit"; ?>" method="post">
 
       <input type="hidden"
          name="_token" value="{{ csrf_token() }}" />
