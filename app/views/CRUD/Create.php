@@ -23,20 +23,20 @@
 
       <div class="form-group">
         <label>Prioridade</label>
-        <select name="priority" class="form-control">
-              <option value="Muito Alta">Muito Alta</option>
-              <option value="Alta">Alta</option>
-              <option value="Média">Média</option>
-              <option value="Baixa">Baixa</option>
+        <select name="priority_id" class="form-control">
+              <option value="1">Muito Alta</option>
+              <option value="2">Alta</option>
+              <option value="3">Media</option>
+              <option value="4">Baixa</option>
         </select>
       </div>
 
        <div class="form-group">
         <label>Situação da atividade</label>
-        <select name="status" class="form-control">
-              <option value="A fazer">A fazer</option>
-              <option value="Em execução">Em execução</option>
-              <option value="Feita">Feita</option>
+        <select name="status_id" class="form-control">
+              <option value="1">A fazer</option>
+              <option value="2">Em execucao</option>
+              <option value="3">Feita</option>
         </select>
       </div>
 
@@ -47,3 +47,4 @@
     </form>
   </div>
 </div>
+
