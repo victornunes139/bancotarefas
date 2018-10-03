@@ -10,15 +10,15 @@ class ActivityModel extends Model {
 
 	public function list() {
 		$sql = "SELECT
-   activities.name as activity_name,activities.id as activity_id,description,dateatime,priority_id,status_id,
-   priorities.name as priority_name,
-   statuss.name as status_name
-FROM
-   activities
-INNER JOIN
-   priorities ON activities.priority_id = priorities.id
-INNER JOIN
-   statuss ON activities.status_id = statuss.id";
+   					activities.name as activity_name,activities.id as activity_id,description,dateatime,priority_id,status_id,
+   					priorities.name as priority_name,
+   					statuss.name as status_name
+				FROM
+   					activities
+				INNER JOIN
+   					priorities ON activities.priority_id = priorities.id
+				INNER JOIN
+   					statuss ON activities.status_id = statuss.id";
 		$query = $this->db->query($sql);
 		return $query->fetchAll(\PDO::FETCH_OBJ);
 	}
@@ -35,7 +35,6 @@ INNER JOIN
 			$error[2] = "O campo de data é obrigatório";
 		}
 		return $error;
-
 	}
 
 	public function insert($name, $description, $dateatime, $priority_id, $status_id) {
