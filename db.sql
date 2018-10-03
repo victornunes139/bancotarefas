@@ -36,13 +36,14 @@ ALTER TABLE activities ADD CONSTRAINT fk_statuss FOREIGN KEY (status_id) REFEREN
 
 ALTER DATABASE bancotarefas DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
+
 INSERT INTO priorities (name) VALUES
 ('Muito Alta'),
 ('Alta'),
-('Média'),
+('Media'),
 ('Baixa');
 
 INSERT INTO statuss (name) VALUES
 ('A fazer'),
-('Em execução'),
+('Em execucao'),
 ('Feita');
