@@ -14,6 +14,25 @@ FUNÇÕES:
 	
 	-VISUALIZAR: É possível ver com mais detalhes aquela atividade em específico,como o seu ID no banco.
 
+	
+COMO TER ACESSO AO BANCO DE DADOS E AO SISTEMA:
+
+	-Primeiro deve-se ir ao arquivo "db.sql" ,encontrado na raiz do projeto. Esse arquivo contém o estrutura do banco de dados. A partir disso,dependendo de qual programa o usuário utilizar,poderá colocar esse código para ser executado.
+	
+	-O segundo passo é ir ao "config.php" ,localizado na pasta "config".Esse arquivo contém a lógica de conexão entre esse projeto e o servidor.As informações ,como o nome do servidor,senha,será relativo,sendo necessário ser alterado para a necessidade do usuário que estiver utilizando-o.
+	
+	
+DETALHES DO BANCO DE DADOS:
+
+	---------------------------------------
+	TABELAS: 
+			 -ACTIVITIES
+			 -PRIORITIES
+			 -STATUSS
+	-------------------------------------
+	->É importante citar que é realizada um relacionamento entre as tabelas "priorities" e "statuss" com a "activities".
+	
+
 FERRAMENTAS UTILIZADAS:
 
 	-BOOTSTRAP;
@@ -23,6 +42,7 @@ FERRAMENTAS UTILIZADAS:
 	-MySQL
 	
 	-Composer
+	
 	
 DESENVOLVEDOR:
 
